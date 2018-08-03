@@ -50,6 +50,18 @@
 	?>
 </h1>
 <h1 class="h1--modified">X</h1>
+<p>
+	<?php
+		$a = 100;
+		$b = 1;
+
+		//$a += +$b -$b = $a;
+
+		$a = $a + $b - $b = $a;
+
+		echo "$a, $b"; 
+	?>
+</p>
 <h3>
 	<?php
 	/*
