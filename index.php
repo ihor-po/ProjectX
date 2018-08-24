@@ -39,38 +39,34 @@
 			text-transform: uppercase;
 			color: #929292;
 		}
+		label, input, select, button {
+			line-height: 1.5rem;
+			font-size: 1.5rem;
+		}
+		button {
+			width: 9rem;
+			height: 3rem;
+			margin-top: 0.735rem;
+		}
+		select {
+			width: 15rem;
+			margin-left:6.8rem;
+		}
 	</style>
 </head>
 <body>
 <div class="main">
-<h1>
-	<?php
-		//First text
-		echo "The trust is out there";
-	?>
-</h1>
-<h1 class="h1--modified">X</h1>
-<p>
-	<?php
-		$a = 100;
-		$b = 1;
-
-		//$a += +$b -$b = $a;
-
-		$a = $a + $b - $b = $a;
-
-		echo "$a, $b"; 
-	?>
-</p>
-<h3>
-	<?php
-	/*
-		Second text
-	*/ 
-		echo "files"; 
-	?>
-		
-</h3>
+	<h1>интерпретатор HTML</h1>
+<form method="POST">
+	<div>
+		<label for="yourHtml">Код HTML</label>
+		<input type="text" name="yourHtml" id="yourHtml" placeholder="Введите ваш код" value="<?= htmlspecialchars($_POST['yourHtml']) ?>">
+	</div>
+	<button type="submit">Вывести</button>
+</form>
+	<div>
+		<?= $_POST['yourHtml']?>
+	</div>
 </div>
 </body>
 </html>
