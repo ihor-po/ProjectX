@@ -1,1 +1,1 @@
-requare 'vendor/autoload.php'
+requare '../vendor/autoload.php'
