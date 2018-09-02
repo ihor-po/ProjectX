@@ -25,16 +25,19 @@
       });
     </script>
     <!-- Dashboard Core -->
-    <link href="./assets/css/dashboard.css" rel="stylesheet" />
-    <script src="./assets/js/dashboard.js"></script>
+    <link href="/assets/css/dashboard.css" rel="stylesheet" />
+    <script src="/assets/js/dashboard.js"></script>
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/core.js"></script>
     <!-- c3.js Charts Plugin -->
-    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <link href="/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="/assets/plugins/charts-c3/plugin.js"></script>
     <!-- Google Maps Plugin -->
-    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <link href="/assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="/assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
-    <script src="./assets/plugins/input-mask/plugin.js"></script>
+    <script src="/assets/plugins/input-mask/plugin.js"></script>
   </head>
   <body class="">
     <div class="page">
@@ -43,9 +46,9 @@
           <div class="row">
             <div class="col col-login mx-auto">
               <div class="text-center mb-6">
-                <img src="./demo/brand/tabler.svg" class="h-6" alt="">
+                <!-- <img src="uploads/brand/tabler.svg" class="h-6" alt=""> -->
               </div>
-              <form class="card" action="" method="post">
+              <form class="card" action="login" method="post">
                 <div class="card-body p-6">
                   <div class="card-title">Вход в аккаунт</div>
                   <div class="form-group">
@@ -55,7 +58,7 @@
                   <div class="form-group">
                     <label class="form-label">
                       Пароль
-                      <a href="./forgot-password.html" class="float-right small">Восстановить паротль</a>
+                      <a href="/forgot_password" class="float-right small">Восстановить паротль</a>
                     </label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
@@ -71,7 +74,7 @@
                 </div>
               </form>
               <div class="text-center text-muted">
-               Нет аккаунта? <a href="./register.html">Зарегистрироваться</a>
+               Нет аккаунта? <a href="/register">Зарегистрироваться</a>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@
 	<link rel="icon" href="./favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
 
-	<title>Feed</title>
+	<title><?= $title ?></title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
@@ -45,7 +45,7 @@
 					<div class="d-flex">
 						<a class="header-brand" href="#">
 							<span class="fa fa-twitter"></span>
-							<span class="header-brand-img">My twitter</span>
+							<span class="header-brand-img"><?= $mainTitle ?></span>
 						</a>
 						<div class="d-flex order-lg-2 ml-auto">
 							<div class="dropdown d-none d-md-flex">
@@ -55,21 +55,21 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
+										<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/male/41.jpg)"></span>
 										<div>
 											<strong>Nathan</strong> pushed new commit: Fix page load performance issue.
 											<div class="small text-muted">10 minutes ago</div>
 										</div>
 									</a>
 									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
+										<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/female/1.jpg)"></span>
 										<div>
 											<strong>Alice</strong> started new task: Tabler UI design.
 											<div class="small text-muted">1 hour ago</div>
 										</div>
 									</a>
 									<a href="#" class="dropdown-item d-flex">
-										<span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
+										<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/female/18.jpg)"></span>
 										<div>
 											<strong>Rose</strong> deployed new version of NodeJS REST Api V3
 											<div class="small text-muted">2 hours ago</div>
@@ -81,15 +81,15 @@
 							</div>
 							<div class="dropdown">
 								<a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-									<span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+									<span class="avatar" style="background-image: url(uploads/faces/female/25.jpg)"></span>
 									<span class="ml-2 d-none d-lg-block">
 										<span class="text-default">Jane Pearson</span>
 										<small class="text-muted d-block mt-1">user</small>
 									</span>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-user"></i> Profile
+									<a class="dropdown-item" href="/profile/1">
+										<i class="dropdown-icon fe fe-user"></i> Профиль
 									</a>
 									<a class="dropdown-item" href="#">
 										<i class="dropdown-icon fe fe-settings"></i> Settings
@@ -126,10 +126,10 @@
 						<div class="col-lg order-lg-first">
 							<ul class="nav nav-tabs border-0 flex-column flex-lg-row">
 								<li class="nav-item">
-									<a href="./profile.html" class="nav-link"><i class="fe fe-home"></i> My page</a>
+									<a href="/profile/1" class="nav-link"><i class="fe fe-home"></i> Моя страница</a>
 								</li>
 								<li class="nav-item">
-									<a href="./feed.html" class="nav-link active"><i class="fe fe-file"></i>Tweets feed</a>
+									<a href="/feed" class="nav-link active"><i class="fe fe-file"></i>Лента сообщений</a>
 								</li>
 							</ul>
 						</div>
@@ -155,7 +155,7 @@
 								<ul class="list-group card-list-group">
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/1.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/1.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">4 min</small>
@@ -171,7 +171,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/2.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/2.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">12 min</small>
@@ -186,7 +186,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/3.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/3.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">34 min</small>
@@ -204,7 +204,7 @@
 
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/4.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/4.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">4 min</small>
@@ -220,7 +220,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/5.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/5.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">12 min</small>
@@ -235,7 +235,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/6.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/6.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">34 min</small>
@@ -252,7 +252,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/7.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/7.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">4 min</small>
@@ -268,7 +268,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/8.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/8.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">12 min</small>
@@ -283,7 +283,7 @@
 									</li>
 									<li class="list-group-item py-5">
 										<div class="media">
-											<div class="media-object avatar avatar-md mr-4" style="background-image: url(demo/faces/male/9.jpg)"></div>
+											<div class="media-object avatar avatar-md mr-4" style="background-image: url(uploads/faces/male/9.jpg)"></div>
 											<div class="media-body">
 												<div class="media-heading">
 													<small class="float-right text-muted">34 min</small>

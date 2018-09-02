@@ -72,7 +72,7 @@
                 </div>
               </form>
               <div class="text-center text-muted">
-                Уже зарегистрированы? <a href="./login.html">Войти</a>
+                Уже зарегистрированы? <a href="/">Войти</a>
               </div>
             </div>
           </div>

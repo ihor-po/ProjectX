@@ -59,7 +59,7 @@
                 </div>
               </form>
               <div class="text-center text-muted">
-                Не обращайте внимания, <a href="./login.html">вернуться</a> на страницу входа
+                Не обращайте внимания, <a href="/">вернуться</a> на страницу входа
               </div>
             </div>
           </div>

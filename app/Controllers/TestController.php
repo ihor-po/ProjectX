@@ -17,4 +17,17 @@ class TestController
 	 {
 	 	return "Welkom dear $userName";
 	 }
+
+	 public function cookiesInWork()
+	 {
+	 	setcookie('test', 'Hello Cookie', time() + 3600);
+
+	 	var_dump($_COOKIE);
+
+	 	session_start();
+
+	 	//$_SESSION['new_data'] = 'SESSION!';
+
+	 	var_dump($_SESSION);
+	 }
 }
