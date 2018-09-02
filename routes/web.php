@@ -7,6 +7,6 @@
 use Framework\Router;
 
 Router::group(['namespace' => '\App\Controllers'], function() {
-	Router::get('/', 'TestController@index');
+	Router::get('/', 'HomeController@index');
 	Router::get('/hello/{userName?}', 'TestController@hello');
 });
