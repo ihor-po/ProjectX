@@ -91,8 +91,8 @@
 									<a class="dropdown-item" href="/profile/1">
 										<i class="dropdown-icon fe fe-user"></i> Профиль
 									</a>
-									<a class="dropdown-item" href="#">
-										<i class="dropdown-icon fe fe-settings"></i> Settings
+									<a class="dropdown-item" href="/settings/1">
+										<i class="dropdown-icon fe fe-settings"></i> Настройки
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">
