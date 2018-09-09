@@ -6,7 +6,7 @@ use Framework\View;
 
 define('APP_TITLE', 'Project - X');
 
-class HomeController
+class LoginController
 {
 	 public function index()
 	 {
