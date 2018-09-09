@@ -1,5 +1,6 @@
 *.txt
 *.log
 .idea/
+test.php
 
 /vendor/

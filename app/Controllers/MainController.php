@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 use Framework\View;
 
-define('APP_TITLE', 'Project - X');
-
 class MainController
 {
 	 public function feed()

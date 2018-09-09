@@ -3,11 +3,25 @@
 namespace App\Controllers;
 
 use Framework\View;
+use Framework\Controller;
+use App\Helpers\AuthHelper;
+use App\Models\User;
 
-define('APP_TITLE', 'Project - X');
-
-class LoginController
+class LoginController extends Controller
 {
+	protected function before()
+    {
+    	if (AuthHelper::Auth())
+    	{
+    		return header("Location: /feed");
+    	}
+    }
+
+    protected function after()
+    {
+
+    }
+
 	 public function index()
 	 {
 	 	$title = APP_TITLE . ' :: Login';
@@ -41,7 +55,16 @@ class LoginController
 	 	$title = APP_TITLE;
 	 	$mainTitle = $title;
 
-	 	View::render('feed', compact('title', 'mainTitle'));
+ 		$user = User::getByEmail($_POST['email']);
+
+	 	if (!$user)
+	 	{
+	 		return header("Location: /feed");
+	 	}
+	 	else
+	 	{
+
+	 	}
 
 	 }
 }

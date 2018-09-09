@@ -53,14 +53,14 @@
                   <div class="card-title">Вход в аккаунт</div>
                   <div class="form-group">
                     <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                   </div>
                   <div class="form-group">
                     <label class="form-label">
                       Пароль
                       <a href="/forgot_password" class="float-right small">Восстановить паротль</a>
                     </label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group">
                     <label class="custom-control custom-checkbox">
