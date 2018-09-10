@@ -6,6 +6,7 @@ use Framework\View;
 use Framework\Controller;
 use App\Helpers\AuthHelper;
 use App\Helpers\Session;
+use App\Helpers\TraitsHelper as Traits;
 use App\Models\User;
 
 class LoginController extends Controller
@@ -14,7 +15,7 @@ class LoginController extends Controller
     {
     	if (AuthHelper::Auth())
     	{
-    		return header("Location: /feed");
+    		Traits::Redirect('/feed');
     	}
     }
 
@@ -24,21 +25,21 @@ class LoginController extends Controller
 
 	 public function index()
 	 {
-	 	$title = APP_TITLE . ' :: Login';
+	 	$title = APP_TITLE . ' :: Вход';
 
 	 	View::render('login', compact('title'));
 	 }
 
 	 public function forgotPassword()
 	 {
-	 	$title = APP_TITLE . ' :: Forgot password';
+	 	$title = APP_TITLE . ' :: Восстановить пароль';
 
 	 	View::render('forgot-password', compact('title'));
 	 }
 
 	 public function register()
 	 {
-	 	$title = APP_TITLE . ' :: Register';
+	 	$title = APP_TITLE . ' :: Регистрация';
 
 	 	View::render('register', compact('title'));
 	 }
@@ -54,26 +55,32 @@ class LoginController extends Controller
 	 {
 	 	$title = APP_TITLE . ' :: Вход';
 
- 		$user = User::getByEmail($_POST['email']);
+	 	if (isset($_POST) && !empty($_POST['email']) && !empty($_POST['password']))
+	 	{
+	 		$user = User::getByEmail($_POST['email']);
 
- 		if (isset($user) && !empty($user))
- 		{
- 			if (password_verify($_POST['password'], $user['password']))
- 			{
- 				
- 				Session::initSession($user);
-
- 				return header("Location: /feed");
- 			}
+	 		if (isset($user) && !empty($user))
+	 		{
+	 			if (password_verify($_POST['password'], $user['password']))
+	 			{
+	 				Session::initSession($user);
+	 				Traits::Redirect('/feed');
+	 			}
+		 		else
+		 		{
+		 			$error = "Неверный пароль!";
+		 		}
+	 		}
 	 		else
 	 		{
-	 			$error = "Неверный пароль!";
+				$error = "Такого пользователя не существует!";
 	 		}
- 		}
- 		else
- 		{
-			$error = "Такого пользователя не существует!";
- 		}
+	 	}
+	 	else
+	 	{
+	 		$error = "Вы не ввели данные для входа";
+	 	}
+ 		
 
  		View::render('login', compact('error', 'title'));
 

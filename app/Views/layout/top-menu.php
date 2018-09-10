@@ -49,7 +49,7 @@
 						<a class="dropdown-item" href="/profile/<?= $user['login']?>">
 							<i class="dropdown-icon fe fe-user"></i> Профиль
 						</a>
-						<a class="dropdown-item" href="/settings/1">
+						<a class="dropdown-item" href="/settings/<?= $user['login']?>">
 							<i class="dropdown-icon fe fe-settings"></i> Настройки
 						</a>
 						<div class="dropdown-divider"></div>

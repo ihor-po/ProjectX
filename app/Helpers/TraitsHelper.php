@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Helpers;
+
+class TraitsHelper
+{
+	public static function Redirect($url, $statusCode = 303)
+	{
+		header('Location: ' . $url, true, $statusCode);
+		die();
+	}
+}
+

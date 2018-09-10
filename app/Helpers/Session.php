@@ -4,9 +4,14 @@ namespace App\Helpers;
 
 class Session
 {
+	private static function issetSession() : bool
+	{
+		return (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) ? true : false;
+	}
+	
 	public static function initSession($user) : void
 	{
-		if (!static::issetSession())
+		if (!$this->static::issetSession())
 		{
 			session_start();
 		}
@@ -16,11 +21,6 @@ class Session
 		$_SESSION['name'] = $user['name'];
 		$_SESSION['avatar'] = $user['avatar'];
 
-	}
-
-	 static function issetSession() : bool
-	{
-		return (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) ? true : false;
 	}
 
 	public static function closeSession() : void
