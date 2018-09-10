@@ -6,13 +6,6 @@ class AuthHelper
 {
 	public static function Auth() : bool
 	{
-		$res = false;
-
-		if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
-		{
-			$res = true;
-		}
-
-		return $res;
+		return (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) ? true : false;
 	}
 }

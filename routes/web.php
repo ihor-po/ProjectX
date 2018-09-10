@@ -16,7 +16,5 @@ Router::group(['namespace' => '\App\Controllers'], function() {
 	Router::get('/feed', 'MainController@feed');
 	Router::get('/profile/{login}', 'MainController@userProfile');
 	Router::get('/settings/{login}', 'MainController@userSettings');
-	
-	Router::get('/hello/{userName?}', 'TestController@hello');
-	Router::get('/cookie', 'TestController@cookiesInWork');
+	Router::get('/logout', 'LoginController@logout');
 });

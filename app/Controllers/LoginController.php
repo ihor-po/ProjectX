@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Framework\View;
 use Framework\Controller;
 use App\Helpers\AuthHelper;
+use App\Helpers\Session;
 use App\Models\User;
 
 class LoginController extends Controller
@@ -13,13 +14,12 @@ class LoginController extends Controller
     {
     	if (AuthHelper::Auth())
     	{
-    		return header("Location: /feed", ['isAuth' => true, 'mainTitle' => APP_TITLE]);
+    		return header("Location: /feed");
     	}
     }
 
     protected function after()
     {
-
     }
 
 	 public function index()
@@ -60,6 +60,9 @@ class LoginController extends Controller
  		{
  			if (password_verify($_POST['password'], $user['password']))
  			{
+ 				
+ 				Session::initSession($user);
+
  				return header("Location: /feed");
  			}
 	 		else
@@ -75,5 +78,10 @@ class LoginController extends Controller
  		View::render('login', compact('error', 'title'));
 
 	 }
+
+ 	public function logout()
+	{
+		Session::closeSession();
+	}
 
 }
