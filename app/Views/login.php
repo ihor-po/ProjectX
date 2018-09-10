@@ -1,8 +1,6 @@
 <?php
     require_once 'layout/header.php';
 ?>
-<!--     <div class="page">
-      <div class="page-single"> -->
         <div class="container">
           <div class="row">
             <div class="col col-login mx-auto">
@@ -12,6 +10,11 @@
               <form class="card" action="login" method="post">
                 <div class="card-body p-6">
                   <div class="card-title">Вход в аккаунт</div>
+                  <?php if (isset($error) && !empty($error)) {?>
+                    <div class="alert alert-danger" role="alert">
+                      <?= $error ?>
+                    </div>
+                  <?php  } ?>
                   <div class="form-group">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -40,8 +43,6 @@
             </div>
           </div>
         </div>
-<!--       </div>
-    </div> -->
 <?php
     require_once 'layout/footer.php';
 ?>

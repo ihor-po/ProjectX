@@ -37,7 +37,7 @@ class User extends Model
 
         $stmt->execute([':email' => $email]);
         
-        return $stmt->fetch(PDO::FETCH_OBJ);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // public static function create(array $params): bool

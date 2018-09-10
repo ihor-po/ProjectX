@@ -13,7 +13,7 @@ class LoginController extends Controller
     {
     	if (AuthHelper::Auth())
     	{
-    		return header("Location: /feed");
+    		return header("Location: /feed", ['isAuth' => true, 'mainTitle' => APP_TITLE]);
     	}
     }
 
@@ -52,19 +52,28 @@ class LoginController extends Controller
 
 	 public function login()
 	 {
-	 	$title = APP_TITLE;
-	 	$mainTitle = $title;
+	 	$title = APP_TITLE . ' :: Вход';
 
  		$user = User::getByEmail($_POST['email']);
 
-	 	if (!$user)
-	 	{
-	 		return header("Location: /feed");
-	 	}
-	 	else
-	 	{
+ 		if (isset($user) && !empty($user))
+ 		{
+ 			if (password_verify($_POST['password'], $user['password']))
+ 			{
+ 				return header("Location: /feed");
+ 			}
+	 		else
+	 		{
+	 			$error = "Неверный пароль!";
+	 		}
+ 		}
+ 		else
+ 		{
+			$error = "Такого пользователя не существует!";
+ 		}
 
-	 	}
+ 		View::render('login', compact('error', 'title'));
 
 	 }
+
 }
