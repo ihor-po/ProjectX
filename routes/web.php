@@ -13,7 +13,7 @@ Router::group(['namespace' => '\App\Controllers'], function() {
 	Router::get('/error', 'LoginController@error');
 	Router::post('/login', 'LoginController@login');
 
-	Router::get('/feed/', 'MainController@feed');
+	Router::get('/feeds/', 'MainController@feeds');
 	Router::get('/profile/{login}', 'MainController@userProfile');
 	Router::get('/settings/{login}', 'MainController@userSettings');
 	Router::get('/logout', 'LoginController@logout');

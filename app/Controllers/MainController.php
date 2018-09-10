@@ -35,7 +35,7 @@ class MainController extends Controller
 
     }
 
-	 public function feed()
+	 public function feeds()
 	 {
 	 	$title = APP_TITLE . ' :: Лента сообщений';
 	 	$mainTitle = APP_TITLE;

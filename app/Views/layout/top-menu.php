@@ -86,7 +86,7 @@
 						<a href="/profile/<?= $user['login']?>" class="nav-link"><i class="fe fe-home"></i> Моя страница</a>
 					</li>
 					<li class="nav-item">
-						<a href="/feed" class="nav-link active"><i class="fe fe-file"></i>Лента сообщений</a>
+						<a href="/feeds" class="nav-link active"><i class="fe fe-file"></i>Лента сообщений</a>
 					</li>
 				</ul>
 			</div>
