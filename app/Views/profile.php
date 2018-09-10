@@ -10,7 +10,7 @@
                 <div class="card-body text-center">
                   <img class="card-profile-img" src="/uploads/faces/male/16.jpg">
 
-                  <h3 class="mb-3">Peter Richards</h3>
+                  <h3 class="mb-3"><?= $user['name']?></h3>
 
                   <p class="mb-4">
                     Big belly rude boy, million dollar hustler. Unemployed.
@@ -42,7 +42,7 @@
                       <div class="media-body">
                         <div class="media-heading">
                           <small class="float-right text-muted">4 min</small>
-                          <h5>Peter Richards</h5>
+                          <h5><?= $user['name']?></h5>
                         </div>
                         <div>
                           Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras
@@ -58,7 +58,7 @@
                       <div class="media-body">
                         <div class="media-heading">
                           <small class="float-right text-muted">12 min</small>
-                          <h5>Peter Richards</h5>
+                          <h5><?= $user['name']?></h5>
                         </div>
                         <div>
                           Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
@@ -73,7 +73,7 @@
                       <div class="media-body">
                         <div class="media-heading">
                           <small class="float-right text-muted">34 min</small>
-                          <h5>Peter Richards</h5>
+                          <h5><?= $user['name']?></h5>
                         </div>
 
                         <div>

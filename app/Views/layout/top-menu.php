@@ -13,21 +13,21 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 						<a href="#" class="dropdown-item d-flex">
-							<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/male/41.jpg)"></span>
+							<span class="avatar mr-3 align-self-center" style="background-image: url(/uploads/faces/male/41.jpg)"></span>
 							<div>
 								<strong>Nathan</strong> pushed new commit: Fix page load performance issue.
 								<div class="small text-muted">10 minutes ago</div>
 							</div>
 						</a>
 						<a href="#" class="dropdown-item d-flex">
-							<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/female/1.jpg)"></span>
+							<span class="avatar mr-3 align-self-center" style="background-image: url(/uploads/faces/female/1.jpg)"></span>
 							<div>
 								<strong>Alice</strong> started new task: Tabler UI design.
 								<div class="small text-muted">1 hour ago</div>
 							</div>
 						</a>
 						<a href="#" class="dropdown-item d-flex">
-							<span class="avatar mr-3 align-self-center" style="background-image: url(uploads/faces/female/18.jpg)"></span>
+							<span class="avatar mr-3 align-self-center" style="background-image: url(/uploads/faces/female/18.jpg)"></span>
 							<div>
 								<strong>Rose</strong> deployed new version of NodeJS REST Api V3
 								<div class="small text-muted">2 hours ago</div>
@@ -39,9 +39,9 @@
 				</div>
 				<div class="dropdown">
 					<a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-						<span class="avatar" style="background-image: url(uploads/faces/female/25.jpg)"></span>
+						<span class="avatar" style="background-image: url(/uploads/faces/female/25.jpg)"></span>
 						<span class="ml-2 d-none d-lg-block">
-							<span class="text-default">Jane Pearson</span>
+							<span class="text-default"><?= $user['name']?></span>
 							<small class="text-muted d-block mt-1">user</small>
 						</span>
 					</a>
@@ -57,7 +57,7 @@
 							<i class="dropdown-icon fe fe-help-circle"></i> Need help?
 						</a>
 						<a class="dropdown-item" href="/logout">
-							<i class="dropdown-icon fe fe-log-out"></i> Sign out
+							<i class="dropdown-icon fe fe-log-out"></i> Выйти
 						</a>
 					</div>
 				</div>
@@ -83,7 +83,7 @@
 			<div class="col-lg order-lg-first">
 				<ul class="nav nav-tabs border-0 flex-column flex-lg-row">
 					<li class="nav-item">
-						<a href="/profile/1" class="nav-link"><i class="fe fe-home"></i> Моя страница</a>
+						<a href="/profile/<?= $user['login']?>" class="nav-link"><i class="fe fe-home"></i> Моя страница</a>
 					</li>
 					<li class="nav-item">
 						<a href="/feed" class="nav-link active"><i class="fe fe-file"></i>Лента сообщений</a>

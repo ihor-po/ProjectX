@@ -42,7 +42,7 @@ class MainController extends Controller
 
 	 	if ($isAuth)
 	 	{
-	 		$user = ['login' => $_SESSION['login']];
+	 		$user = ['name' => $_SESSION['name'], 'login' => $_SESSION['login']];
 	 	}
 
 	 	View::render('feed', compact('title', 'mainTitle', 'isAuth', 'user'));
