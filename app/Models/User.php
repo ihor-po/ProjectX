@@ -40,21 +40,35 @@ class User extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // public static function create(array $params): bool
-    // {
-    //     $sql = 'INSERT INTO users (email, name, password, registered, last_login) 
-    //             VALUES (:email, :name, :password, :registered, :last_login)';
-    //     $stmt = static::db()->prepare($sql);
-    //     return $stmt->execute([
-    //         ':email' => $params['email'],
-    //         ':name' => $params['name'],
-    //         ':password' => self::hashPassword($params['password']),
-    //         ':registered' => time(),
-    //         ':last_login' => time(),
-    //     ]);
-    // }
-    // protected static function hashPassword(string $password): string
-    // {
-    //     return password_hash($password, PASSWORD_DEFAULT);
-    // }
+    public static function getByLogin(string $login)
+    {
+        static::_instance();
+
+        $stmt = static::db()->prepare('SELECT * FROM users WHERE login = :login');
+
+        $stmt->execute([':login' => $login]);
+        
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public static function create(array $params): bool
+    {
+        $sql = 'INSERT INTO users (login, email, password, name, about, registered, last_login) 
+                VALUES (:login, :email, :password, :name, :about, :registered, :last_login)';
+        $stmt = static::db()->prepare($sql);
+        return $stmt->execute([
+            'login' => $params['login'],
+            ':email' => $params['email'],
+            ':password' => self::hashPassword($params['password']),
+            ':name' => $params['name'],
+            ':about' => $params['about'],
+            ':registered' => time(),
+            ':last_login' => time(),
+        ]);
+    }
+
+    private static function hashPassword(string $password): string
+    {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
 }

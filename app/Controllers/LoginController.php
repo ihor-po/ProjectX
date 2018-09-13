@@ -15,7 +15,7 @@ class LoginController extends Controller
     {
     	if (AuthHelper::Auth())
     	{
-    		Traits::Redirect('/feed');
+    		Traits::Redirect('/feeds');
     	}
     }
 
@@ -26,28 +26,24 @@ class LoginController extends Controller
 	 public function index()
 	 {
 	 	$title = APP_TITLE . ' :: Вход';
-
 	 	View::render('login', compact('title'));
 	 }
 
 	 public function forgotPassword()
 	 {
 	 	$title = APP_TITLE . ' :: Восстановить пароль';
-
 	 	View::render('forgot-password', compact('title'));
 	 }
 
 	 public function register()
 	 {
 	 	$title = APP_TITLE . ' :: Регистрация';
-
 	 	View::render('register', compact('title'));
 	 }
 
 	 public function error()
 	 {
 	 	$title = APP_TITLE . ' :: ERROR';
-
 	 	View::render('404', compact('title'));
 	 }
 
@@ -64,7 +60,7 @@ class LoginController extends Controller
 	 			if (password_verify($_POST['password'], $user['password']))
 	 			{
 	 				Session::initSession($user);
-	 				Traits::Redirect('/feed');
+	 				Traits::Redirect('/feeds');
 	 			}
 		 		else
 		 		{
@@ -85,10 +81,5 @@ class LoginController extends Controller
  		View::render('login', compact('error', 'title'));
 
 	 }
-
- 	public function logout()
-	{
-		Session::closeSession();
-	}
 
 }

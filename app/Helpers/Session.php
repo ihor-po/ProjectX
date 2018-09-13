@@ -11,11 +11,10 @@ class Session
 	
 	public static function initSession($user) : void
 	{
-		if (!$this->static::issetSession())
+		if (!static::issetSession())
 		{
 			session_start();
-		}
-		
+		}	
 		$_SESSION['user_id'] = $user['id'];
 		$_SESSION['login'] = $user['login'];
 		$_SESSION['name'] = $user['name'];
@@ -25,6 +24,6 @@ class Session
 
 	public static function closeSession() : void
 	{
-		session_unset();
+  		session_unset();
 	}
 }

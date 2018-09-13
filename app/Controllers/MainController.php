@@ -28,7 +28,8 @@ class MainController extends Controller
     	{
     		Traits::Redirect('/');
     	}
-    }
+	}
+    
 
     protected function after()
     {
@@ -63,4 +64,10 @@ class MainController extends Controller
 
 	 	View::render('settings', compact('title', 'mainTitle', 'user'));
 	 }
+
+  	public function logout()
+	{
+		Session::closeSession();
+		Traits::Redirect('/');
+	}
 }

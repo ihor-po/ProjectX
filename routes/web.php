@@ -12,9 +12,12 @@ Router::group(['namespace' => '\App\Controllers'], function() {
 	Router::get('/register', 'LoginController@register');
 	Router::get('/error', 'LoginController@error');
 	Router::post('/login', 'LoginController@login');
+	Router::get('/logout', 'MainController@logout');
 
-	Router::get('/feeds/', 'MainController@feeds');
+	Router::post('/register', 'RegisterController@register');
+
+	Router::get('/feeds', 'MainController@feeds');
 	Router::get('/profile/{login}', 'MainController@userProfile');
 	Router::get('/settings/{login}', 'MainController@userSettings');
-	Router::get('/logout', 'LoginController@logout');
+	
 });
