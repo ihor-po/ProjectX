@@ -9,5 +9,10 @@ class TraitsHelper
 		header('Location: ' . $url, true, $statusCode);
 		die();
 	}
+
+	public static function ReloadPage($url = null)
+	{
+		header('Refresh:0;url='.$url);
+	}
 }
 

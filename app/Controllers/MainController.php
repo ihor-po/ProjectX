@@ -8,6 +8,7 @@ use App\Helpers\AuthHelper as Auth;
 use App\Helpers\Session;
 use App\Helpers\TraitsHelper as Traits;
 use App\Models\User;
+use App\Models\Feed;
 
 class MainController extends Controller
 {
@@ -42,8 +43,9 @@ class MainController extends Controller
 	 	$mainTitle = APP_TITLE;
 	 	$isAuth = $this->isAuth;
 	 	$user = $this->user;
+	 	$feeds = Feed::getAll();
 
-	 	View::render('feed', compact('title', 'mainTitle', 'isAuth', 'user'));
+	 	View::render('feed', compact('title', 'mainTitle', 'isAuth', 'user', 'feeds'));
 	 }
 
 	 public function userProfile($login)
@@ -51,9 +53,10 @@ class MainController extends Controller
 	 	$title = APP_TITLE . ' :: Профиль';
 	 	$mainTitle = APP_TITLE;
 	 	$isAuth = $this->isAuth;
-	 	$user = $this->user;
+	 	$user = User::getByLogin($login);
+	 	$feeds = Feed::getAll($user['id']);
 
-	 	View::render('profile', compact('title', 'mainTitle', 'user', 'isAuth'));
+	 	View::render('profile', compact('title', 'mainTitle', 'user', 'isAuth', 'feeds'));
 	 }
 
 	 public function userSettings($login)

@@ -10,82 +10,21 @@
                 <div class="card-body text-center">
                   <img class="card-profile-img" src="/uploads/faces/male/16.jpg">
 
-                  <h3 class="mb-3"><?= $user['name']?></h3>
+                  <h3 class="mb-3"><?= isset($user['name']) ? $user['name'] : null ?></h3>
 
                   <p class="mb-4">
-                    Big belly rude boy, million dollar hustler. Unemployed.
+                    <?= isset($user['about']) ? $user['about'] : null ?>
                   </p>
 
                   <button class="btn btn-outline-primary btn-sm">
-                    <span class="fa fa-twitter"></span> Follow
+                    <span class="fa fa-twitter"></span> Читать
                   </button>
                 </div>
               </div>
             </div>
             <div class="col-lg-8">
               <div class="card">
-                <div class="card-header">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Message">
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary">
-                        <b>Send</b>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <ul class="list-group card-list-group">
-                  <li class="list-group-item py-5">
-                    <div class="media">
-                      <div class="media-object avatar avatar-md mr-4" style="background-image: url(/uploads/faces/male/16.jpg)"></div>
-                      <div class="media-body">
-                        <div class="media-heading">
-                          <small class="float-right text-muted">4 min</small>
-                          <h5><?= $user['name']?></h5>
-                        </div>
-                        <div>
-                          Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras
-                          justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes,
-                          nascetur ridiculus mus.
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-5">
-                    <div class="media">
-                      <div class="media-object avatar avatar-md mr-4" style="background-image: url(/uploads/faces/male/16.jpg)"></div>
-                      <div class="media-body">
-                        <div class="media-heading">
-                          <small class="float-right text-muted">12 min</small>
-                          <h5><?= $user['name']?></h5>
-                        </div>
-                        <div>
-                          Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
-                          parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item py-5">
-                    <div class="media">
-                      <div class="media-object avatar avatar-md mr-4" style="background-image: url(/uploads/faces/male/16.jpg)"></div>
-                      <div class="media-body">
-                        <div class="media-heading">
-                          <small class="float-right text-muted">34 min</small>
-                          <h5><?= $user['name']?></h5>
-                        </div>
-
-                        <div>
-                          Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-                          venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                        </div>
-
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-
+                <?php include_once 'layout/feedField.php'; ?>
               </div>
             </div>
           </div>

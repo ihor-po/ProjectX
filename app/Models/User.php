@@ -57,7 +57,7 @@ class User extends Model
                 VALUES (:login, :email, :password, :name, :about, :registered, :last_login)';
         $stmt = static::db()->prepare($sql);
         return $stmt->execute([
-            'login' => $params['login'],
+            ':login' => $params['login'],
             ':email' => $params['email'],
             ':password' => self::hashPassword($params['password']),
             ':name' => $params['name'],

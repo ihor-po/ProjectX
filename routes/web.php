@@ -19,5 +19,7 @@ Router::group(['namespace' => '\App\Controllers'], function() {
 	Router::get('/feeds', 'MainController@feeds');
 	Router::get('/profile/{login}', 'MainController@userProfile');
 	Router::get('/settings/{login}', 'MainController@userSettings');
+
+	Router::post('/sendFeed', 'FeedController@sendFeed');
 	
 });
