@@ -13,13 +13,10 @@ use App\Models\Feed;
 class MainController extends Controller
 {
 	private $isAuth;
-	private $mainTitle;
 	protected $user;
 
 	protected function before()
     {
-    	$mainTitle = APP_TITLE;
-
     	if (Auth::Auth())
     	{
     		$this->isAuth = true;
@@ -40,7 +37,7 @@ class MainController extends Controller
 	 public function feeds()
 	 {
 	 	$title = APP_TITLE . ' :: Лента сообщений';
-	 	$mainTitle = APP_TITLE;
+	 	$mainTitle = APP_TITLE;	 	
 	 	$isAuth = $this->isAuth;
 	 	$user = $this->user;
 	 	$feeds = Feed::getAll();
@@ -51,7 +48,7 @@ class MainController extends Controller
 	 public function userProfile($login)
 	 {
 	 	$title = APP_TITLE . ' :: Профиль';
-	 	$mainTitle = APP_TITLE;
+	 	$mainTitle = APP_TITLE;		
 	 	$isAuth = $this->isAuth;
 	 	$user = User::getByLogin($login);
 	 	$feeds = Feed::getAll($user['id']);
@@ -63,7 +60,7 @@ class MainController extends Controller
 	 {
 	 	$title = APP_TITLE . ' :: Настройки';
 	 	$mainTitle = APP_TITLE;
-	 	$user = $this->user;
+	 	$user = User::getByLogin($login);
 
 	 	View::render('settings', compact('title', 'mainTitle', 'user'));
 	 }

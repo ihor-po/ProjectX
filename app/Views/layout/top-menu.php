@@ -42,7 +42,7 @@
 						<span class="avatar" style="background-image: url(/uploads/faces/male/16.jpg)"></span>
 						<span class="ml-2 d-none d-lg-block">
 							<span class="text-default"><?= $user['name']?></span>
-							<small class="text-muted d-block mt-1">user</small>
+							<small class="text-muted d-block mt-1">Пользователь</small>
 						</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
@@ -54,7 +54,7 @@
 						</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">
-							<i class="dropdown-icon fe fe-help-circle"></i> Need help?
+							<i class="dropdown-icon fe fe-help-circle"></i> FAQ
 						</a>
 						<a class="dropdown-item" href="/logout">
 							<i class="dropdown-icon fe fe-log-out"></i> Выйти
